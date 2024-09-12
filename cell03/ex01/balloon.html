@@ -25,20 +25,20 @@
     let balloon = document.getElementById('balloon');
     let size = 200;
     let colors = ['red', 'green', 'blue'];
-    let colorIndex = 0;
+    let colorIDX = 0;
 
     function changeBalloon() {
       size += 10;
-      colorIndex = (colorIndex + 1) % colors.length;
+      colorIDX = (colorIDX + 1) % colors.length;
 
       if (size > 420) {
         size = 200;
-        colorIndex = 0;
+        colorIDX = 0;
       }
 
       balloon.style.width = `${size}px`;
       balloon.style.height = `${size}px`;
-      balloon.style.backgroundColor = colors[colorIndex];
+      balloon.style.backgroundColor = colors[colorIDX];
     }
 
     balloon.onmouseleave = function() {
@@ -46,15 +46,15 @@
 
       if (size < 200) {
         size = 200;
-        colorIndex = colors.length - 1;
+        colorIDX = colors.length - 1;
       }
 
       balloon.style.width = `${size}px`;
       balloon.style.height = `${size}px`;
 
     
-      colorIndex = (colorIndex - 1 + colors.length) % colors.length;
-      balloon.style.backgroundColor = colors[colorIndex];
+      colorIDX = (colorIDX - 1 + colors.length) % colors.length;
+      balloon.style.backgroundColor = colors[colorIDX];
     };
   </script>
 </body>
