@@ -23,7 +23,7 @@ function createTodo(text) {
 
 function render() {
     const list = document.getElementById('ft_list');
-    list.innerHTML = ''; // Clear the list
+    list.innerHTML = '';
 
     TodoList.forEach(function (element) {
         list.appendChild(createTodo(element));
