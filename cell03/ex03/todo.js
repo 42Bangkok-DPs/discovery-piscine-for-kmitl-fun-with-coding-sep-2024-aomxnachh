@@ -2,16 +2,33 @@ let TodoList = [];
 
 
 function createTodo(text) {
-    return $('<div class="todo"></div>').html('<p>' + text + '</p>' + '<button onclick="remove(\'' + text + '\')">x</button>');
+    let todoDiv = document.createElement('div');
+    todoDiv.classList.add('todo');
+
+    let todoText = document.createElement('p');
+    todoText.textContent = text;
+
+    let removeButton = document.createElement('button');
+    removeButton.textContent = 'x';
+    removeButton.onclick = function () {
+        remove(text);
+    };
+
+    todoDiv.appendChild(todoText);
+    todoDiv.appendChild(removeButton);
+
+    return todoDiv;
 }
 
 
 function render() {
-    $('#ft_list').empty();
-    $.each(TodoList, function(index, element) {
-        $('#ft_list').append(createTodo(element));
+    const list = document.getElementById('ft_list');
+    list.innerHTML = ''; // Clear the list
+
+    TodoList.forEach(function (element) {
+        list.appendChild(createTodo(element));
     });
-    
+
     localStorage.setItem('todoList', JSON.stringify(TodoList));
 }
 
@@ -33,7 +50,7 @@ function remove(text) {
     }
 }
 
-$(document).ready(function() {
+document.addEventListener('DOMContentLoaded', function () {
     let savedList = localStorage.getItem('todoList');
     if (savedList) {
         TodoList = JSON.parse(savedList);
