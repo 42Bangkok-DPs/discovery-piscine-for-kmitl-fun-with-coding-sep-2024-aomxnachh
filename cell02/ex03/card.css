@@ -35,14 +35,14 @@ body {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    border: 5px solid #4CAF50;
+    border: 5px solid #ecaa38;
     object-fit: cover;
     margin-bottom: 20px;
     transition: border 0.3s ease;
 }
 
 .profile-pic img:hover {
-    border-color: #2d8647;
+    border-color: #e7a849;
 }
 
 /* Login and Description */
@@ -84,7 +84,7 @@ body {
 
 /* Contact Button */
 .contact-btn {
-    background-color: #4CAF50;
+    background-color: #ebb63b;
     color: white;
     padding: 12px 30px;
     border: none;
