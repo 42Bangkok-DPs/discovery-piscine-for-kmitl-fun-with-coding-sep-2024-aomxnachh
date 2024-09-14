@@ -31,7 +31,7 @@ document.querySelectorAll('a').forEach(links =>{
 
 })
 const dynamicText = document.querySelector("p span");
-const words = ["am a Student", "like Computer", "Like Coding", "will be a Programmer", ""];
+const words = ["am a CS:Comedy Science", "Love Java", "hate Java","Like Coding"];
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
